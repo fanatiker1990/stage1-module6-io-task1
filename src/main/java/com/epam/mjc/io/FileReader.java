@@ -1,9 +1,7 @@
 package com.epam.mjc.io;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+
 public class FileReader {
 
     public Profile getDataFromFile(File file) {
@@ -29,8 +27,10 @@ public class FileReader {
                     phone = Long.parseLong(strings[1]);
                 }
             }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        } catch (IOException e) {
+            System.err.println("Не верный путь к файлу или не существует ");
+        }catch (NullPointerException e){
+            System.err.println("Не число");
         }
         return new Profile(name, age, email, phone);
     }
