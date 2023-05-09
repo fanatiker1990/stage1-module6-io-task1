@@ -28,9 +28,9 @@ public class FileReader {
                 }
             }
         } catch (IOException e) {
-            System.err.println("Не верный путь к файлу или не существует ");
-        }catch (NullPointerException e){
-            System.err.println("Не число");
+          throw  new RuntimeException ("Не верный путь к файлу или не существует ");
+        } catch (NullPointerException e) {
+            throw  new RuntimeException ("Не число");
         }
         return new Profile(name, age, email, phone);
     }
