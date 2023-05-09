@@ -1,6 +1,5 @@
 package com.epam.mjc.io;
 
-import java.io.IOException;
 
 public class FileNonExistException extends RuntimeException {
     public FileNonExistException() {
