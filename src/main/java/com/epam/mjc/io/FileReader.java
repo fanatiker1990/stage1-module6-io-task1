@@ -28,7 +28,7 @@ public class FileReader {
                 }
             }
         } catch (IOException e) {
-            throw new RuntimeException("Не верный путь к файлу или не существует ");
+            throw new FileNonExistException();
         }
         return new Profile(name, age, email, phone);
     }
